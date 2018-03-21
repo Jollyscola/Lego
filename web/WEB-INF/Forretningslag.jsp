@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 19-03-2018, 13:17:57
+    Document   : Forretningslag
+    Created on : 20-03-2018, 15:22:43
     Author     : Jollys
 --%>
 
@@ -8,13 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="includes/menu.jsp" %>
-    
-        
+        <h1>Hello World!</h1>
     </body>
 </html>

@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="includes/menu.jsp"></a>
+        <%@include file="includes/menu.jsp" %>
     
         
     </body>

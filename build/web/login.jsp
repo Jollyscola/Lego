@@ -14,14 +14,34 @@
     </head>
     <body>
         
-        <a href="includes/menu.jsp"></a>
+        <%@include file="includes/menu.jsp" %>
+        
        <h1>Login in lego</h1>
-        <form id="login" action="FrontController" method="post">
-            <input type="text" name="email" value="" placeholder="Email" />
-            <input type="password" name="password" value="" placeholder="Password" />
-            <input type="hidden" name="command" value="login" />
+        <form name="login" action="FrontController" method="post">
+                <input type="hidden" name="command" value="login" />
+            <input type="text" name="email"  placeholder="Email" />
+            <input type="password" name="password"  placeholder="Password" />
+            
             <input type="submit" value="Log in" />
         </form>
+       
+       <h1>Register</h1>
+        <from name="register" action="FrontController" method="post">
+            <input type="hidden" name="command" value="register"/>
+            Email:
+            <br/>
+            <input type="email" name="email"  placeholder="email"/>
+            <br/>
+            Password:
+            <br/>
+            <input type="password" name="password1" placeholder="password"/>
+            <br/>
+            Retype Password:
+            <br/>
+            <input type="password" name="password2" placeholder="repeat password"/>
+            <br/>
+            <input type="submit" value="Submit"> 
+        </from>
         <% String error = (String) request.getAttribute( "error"); %>
         <% if(error !=null){ %>
     <p>ERROR</p>
