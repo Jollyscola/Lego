@@ -45,10 +45,10 @@ public class LogicFacade {
         result = (height > 0) & (length > 3) & (width > 3);
         return result;
     }
-    public static Bricks calcBricks(int length, int width, int height){
+    public static Bricks calcBricks(User user,int id){
    Brickcalculateor brick = new Brickcalculateor();
-   
-    return brick.choice_of_bricks(height, width, length); 
+   Order order = user.getOrderFromMap(id);
+    return brick.choice_of_bricks(order.getHeight(), order.getWidth(), order.getLength()); 
     }
 
     

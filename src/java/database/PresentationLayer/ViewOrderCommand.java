@@ -26,21 +26,18 @@ public class ViewOrderCommand extends Command {
             return;
         }
 
-        try {
-            int length = Integer.parseInt(request.getParameter("length"));
-            int width = Integer.parseInt(request.getParameter("width"));
-            int height = Integer.parseInt(request.getParameter("height"));
-            LogicFacade.calcBricks(length, width, height);
-        } catch (NumberFormatException ex) {
-
-            request.setAttribute("error", "you have error");
-        }
+      
+           
+        
         
         
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("user");
+            //int oid = Integer.parseInt(request.getParameter("oid"));
+            //LogicFacade.calcBricks(user, oid);
             List<Order> orders = LogicFacade.getUserOrders(user.getId());
             request.setAttribute("orders", orders);
+             //request.setAttribute("oid", oid);
             request.getRequestDispatcher("WEB-INF/orders.jsp").forward(request, response);
     }
 }

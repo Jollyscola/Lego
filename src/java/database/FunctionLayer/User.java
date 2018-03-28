@@ -9,14 +9,14 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
-
+        this.orderMap = new TreeMap<>();
     }
 
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and all
     private String role;
-
+    private TreeMap<String, Order> orderMap;
     public String getEmail() {
         return email;
     }
@@ -47,6 +47,11 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public Order getOrderFromMap(int id) {
+        String key = ""+id;
+        return this.orderMap.get(key);
     }
 
 }

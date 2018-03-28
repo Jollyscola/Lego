@@ -1,8 +1,70 @@
-/*body{
-    background-image: url(Picture/pattern.png);
-    
-    
-}*/
+
+p {
+    font-style: italic;
+}
+#photolotsbricks{
+
+    width: 200px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+h1, p, h2 {
+    text-align: center;
+}
+#login{
+
+    height: 400px; 
+    width: 640px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#Customerpage{
+
+    height: 400px; 
+    width: 640px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#input {
+
+    height: 400px; 
+    width: 640px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px; 
+    margin-right: 40px;
+}
+.buttonHolder{ 
+    text-align: center; 
+
+}
+#index {
+    height: 400px; 
+    width: 640px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#orders { 
+    width: 200px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.frames {
+    border: solid 2px;
+    border-color: goldenrod;
+    background-color: #FFFFFF;
+    margin-left: auto; 
+    margin-right: auto;
+}
 ul {
     list-style-type: none;
     margin: 0;

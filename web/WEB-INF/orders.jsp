@@ -14,40 +14,60 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+
+            h1, td, th {
+                text-align: center;
+            }
+
+
+            body{
+                background-image: url(Picture/patternlego.jpg);    
+            }
+
+        </style>
     </head>
     <body>
         <%@include file="../includes/menu.jsp" %>
-        <table>
-            
-            <thead>
-                <tr>
-                    
-                    <th>Id</th>
-                    <th>length</th>
-                    <th>width</th>
-                    <th>heigth</th>
-                   
-                    
-                </tr>
-            </thead> 
-            <tbody>
-            <%Bricks bricks = new Bricks(); %>
-                <% for (Order order : (List<Order>) request.getAttribute("orders")) {%>
-                <tr>
-                    
-                    <td><%= order.getId()%></td>
-                    <td><%= order.getLength()%></td>
-                    <td><%= order.getWidth()%></td>
-                    <td><%= order.getHeight()%></td>
-                   
-                </tr>
-                <%}%>
+        <div class="frames" id="orders">
+            <div>
+
+                <h1>Orders</h1>
+            </div>
+            <div>
+                <table>
+
+                    <thead>
+                        <tr>
+
+                            <th>UserId</th>
+                            <th>length</th>
+                            <th>width</th>
+                            <th>heigth</th>
+
+
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <%Bricks bricks = new Bricks(); %>
+                        <% for (Order order : (List<Order>) request.getAttribute("orders")) {%>
+                        <tr>
+
+                            <td><%= order.getUserId()%></td>
+                            <td><%= order.getLength()%></td>
+                            <td><%= order.getWidth()%></td>
+                            <td><%= order.getHeight()%></td>
+
+                        </tr>
+                        <%}%>
 
 
 
 
-            </tbody>
-        </table>
+                    </tbody>
 
+                </table>
+            </div>  
+        </div>
     </body>
 </html>

@@ -6,7 +6,7 @@
 <nav>
     <ul>
 
-        <li class="Legohuset">LegoHuset</li>
+        <li class="Legohuset">Lego House</li>
         <li><a href="index.jsp">Front page</a></li>
             <% if (user == null) { %>
         <li><a href="login.jsp">Login/Register</a></li>
