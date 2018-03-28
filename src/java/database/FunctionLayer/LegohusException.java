@@ -1,4 +1,4 @@
-package Exceptions;
+package database.FunctionLayer;
 
 /**
  * This exception is thrown when errors occur reading

@@ -5,8 +5,8 @@
  */
 package database.PresentationLayer;
 
-import Exceptions.LegohusException;
-import Exceptions.WritingToSQLException;
+import database.FunctionLayer.LegohusException;
+import database.DBAccess.WritingToSQLException;
 import database.FunctionLayer.LoginSampleException;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -33,19 +33,10 @@ public class FrontController extends HttpServlet {
      */
     protected void processRequest( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
-        try {
+        
             Command action = Command.from( request );
-            String view = action.execute( request, response );
-            
-            request.getRequestDispatcher( view + ".jsp" ).forward( request, response );
-            
-        } 
-        catch ( LoginSampleException ex ) {
-            request.setAttribute( "error", ex.getMessage() );
-            request.getRequestDispatcher( "index.jsp" ).forward( request, response );
-        }
+            action.execute( request, response );
     }
-//    "/WEB-INF/" +
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      Handles the HTTP <code>GET</code> method.

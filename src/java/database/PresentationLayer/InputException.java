@@ -1,5 +1,5 @@
 
-package Exceptions;
+package database.PresentationLayer;
 
 /**
  * This exception is thrown when the customers

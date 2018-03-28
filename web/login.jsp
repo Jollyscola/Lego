@@ -9,24 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
     <body>
-        
+
         <%@include file="includes/menu.jsp" %>
-        
-       <h1>Login in lego</h1>
+
+        <% if (request.getParameter("error") != null) { %>
+        <p style="color:red"><%= request.getParameter("error")%></p>
+        <% } %>
+
+        <h1>Login in lego</h1>
         <form name="login" action="FrontController" method="post">
-                <input type="hidden" name="command" value="login" />
+            <input type="hidden" name="command" value="login" />
             <input type="text" name="email"  placeholder="Email" />
             <input type="password" name="password"  placeholder="Password" />
-            
+
             <input type="submit" value="Log in" />
         </form>
-       
-       <h1>Register</h1>
-        <from name="register" action="FrontController" method="post">
+
+        <h1>Register</h1>
+        <form  action="FrontController" method="post">
             <input type="hidden" name="command" value="register"/>
             Email:
             <br/>
@@ -41,14 +45,13 @@
             <input type="password" name="password2" placeholder="repeat password"/>
             <br/>
             <input type="submit" value="Submit"> 
-        </from>
-        <% String error = (String) request.getAttribute( "error"); %>
-        <% if(error !=null){ %>
-    <p>ERROR</p>
-    <%= error %>
-    <%}%>
-       
-       
-       
+        </form>
+        <% String error = (String) request.getAttribute("error"); %>
+        <% if (error != null) {%>
+        <p style="color:red">Error: <%= error%></p>
+        <%}%>
+
+
+
     </body>
 </html>

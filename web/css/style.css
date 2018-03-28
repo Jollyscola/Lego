@@ -10,7 +10,12 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
-
+.Legohuset{
+    text-align: center;
+    font-size: 28px;
+    color: goldenrod;
+    display: block;
+}
 li {
     float: left;
 }

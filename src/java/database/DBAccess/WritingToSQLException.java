@@ -1,5 +1,5 @@
 
-package Exceptions;
+package database.DBAccess;
 
 /**
  * This exception is thrown when errors occur

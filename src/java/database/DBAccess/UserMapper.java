@@ -10,11 +10,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- The purpose of UserMapper is to...
-
- @author kasper
- */
 public class UserMapper {
 
     public static void createUser( User user ) throws LoginSampleException {
@@ -56,6 +51,28 @@ public class UserMapper {
         } catch ( SQLException ex ) {
             throw new LoginSampleException(ex.getMessage());
         }
+    }
+
+    public static User get(int userid) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String sql = "SELECT * FROM lego.users where id=?";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, userid);
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            String role = rs.getString( "role" );
+           String password = rs.getString("password");
+            String email = rs.getString("email");
+            User user = new User(email, password, role);
+            }
+            
+        } catch (SQLException ex) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+        return null;
     }
 
 }

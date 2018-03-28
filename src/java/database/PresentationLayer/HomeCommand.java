@@ -6,18 +6,20 @@
 package database.PresentationLayer;
 
 import database.FunctionLayer.User;
+import java.io.IOException;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class Home extends Command {
+public class HomeCommand extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) {
+    void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
-        return "WEB-INF/" + user.getRole() + "page";
+        request.getRequestDispatcher("WEB-INF/" + user.getRole() + "page.jsp").forward(request, response);
     }
 
 }
