@@ -47,8 +47,8 @@ public class InputCommand extends Command {
             
             
         } catch (NumberFormatException ex) {
-throw new IllegalStateException(ex);
-//request.setAttribute("error", "An error occurred.");
+            throw new IllegalStateException(ex);
+
         }
         boolean valid = LogicFacade.Dimensions(length, width, height);
         if(valid){
