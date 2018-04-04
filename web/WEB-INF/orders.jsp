@@ -49,7 +49,7 @@
                         </tr>
                     </thead> 
                     <tbody>
-                        <%Bricks bricks = new Bricks(); %>
+                        
                         <% for (Order order : (List<Order>) request.getAttribute("orders")) {%>
                         <tr>
 
