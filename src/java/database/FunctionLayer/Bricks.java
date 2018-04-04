@@ -10,11 +10,25 @@ public class Bricks {
     private int four;
     private int two;
     private int one;
-    public Bricks() {
-        this.four = 0;
-        this.two = 0;
-        this.one = 0;
+
+    public Bricks(int four, int two, int one) {
+        this.four = four;
+        this.two = two;
+        this.one = one;
     }
+
+    public void setFour(int four) {
+        this.four = four;
+    }
+
+    public void setTwo(int two) {
+        this.two = two;
+    }
+
+    public void setOne(int one) {
+        this.one = one;
+    }
+    
 
     public int getFour() {
         return four;
@@ -28,10 +42,5 @@ public class Bricks {
         return one;
     }
 
-    public void addBricks(int four, int two, int one) {
-        this.four += four;
-        this.two += two;
-        this.one += one;
-
-    }
+    
 }

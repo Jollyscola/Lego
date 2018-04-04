@@ -24,7 +24,7 @@ public class Brickcalculateor {
 
     public Bricks choice_of_bricks(int height, int width, int length) {
 
-        Bricks bricksCalculated = new Bricks();
+        
 
         for (int height_number = 0; height_number < height; height_number++) {
             final int displacement = height_number % 4; //den længeste klods har 4 brikker
@@ -73,7 +73,9 @@ public class Brickcalculateor {
                     + four);
 
         } // for height_number
-        bricksCalculated.addBricks(four, two, one);
+        
+        Bricks bricksCalculated = new Bricks(four, two, one);
+       
 
         return bricksCalculated;
     }
